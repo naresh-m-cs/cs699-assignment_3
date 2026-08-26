@@ -42,7 +42,7 @@
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-buttons">
-              <span class="button red"></span>
+              <span class="button red close-button"></span>
               <span class="button yellow"></span>
               <span class="button green"></span>
             </div>
@@ -99,7 +99,7 @@
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-buttons">
-              <span class="button red"></span>
+              <span class="button red close-button"></span>
               <span class="button yellow"></span>
               <span class="button green"></span>
             </div>
@@ -154,7 +154,7 @@ Initializing AST Architecture Analyzer...
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-buttons">
-              <span class="button red"></span>
+              <span class="button red close-button"></span>
               <span class="button yellow"></span>
               <span class="button green"></span>
             </div>
@@ -209,6 +209,7 @@ Initializing AST Architecture Analyzer...
       const glasscards = document.querySelectorAll('.glasscard');
       const leftArrow = document.querySelector('.leftarrow');
       const rightArrow = document.querySelector('.rightarrow');
+      const closeButtons = document.querySelectorAll('.close-button');
 
       let currentIndex = 0;
 
@@ -228,6 +229,13 @@ Initializing AST Architecture Analyzer...
         showGlasscard(currentIndex);
       });
 
+      closeButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % glasscards.length;
+          showGlasscard(currentIndex);
+        });
+        
+      });
       // Initialize the first glasscard
       showGlasscard(currentIndex);
     </script>
