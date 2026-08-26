@@ -176,3 +176,40 @@ ul li {
 .hidden {
     display: none;
 }
+
+@media (max-width: 768px) {
+    .glasscard {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+        min-height: auto;
+        top: 50%;
+    }
+
+    .about-me {
+        padding-right: 0;
+    }
+
+    .terminal {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .glasscard {
+        padding: 10px;
+    }
+
+    .right-side {
+        display: none;
+    }
+
+    .about-me {
+        font-size: 16px;
+    }
+
+    .terminal {
+        font-size: 12px;
+    }
+}
